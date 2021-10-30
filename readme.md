@@ -26,21 +26,20 @@ docker-compose down -v
 docker exec -it docker_mysql_server /bin/bash
 ```
 
+### export the database (run outside of mysql shell)
+```sh
+mysqldump -u root -p docker_mysql_database > ./docker_mysql_database.sql
+```
+
+### import a database (run outside of mysql shell)
+```sh
+mysql -u root -p docker_mysql_database > ./docker_mysql_database.sql
+```
+
 ### log into the mysql shell
 ```sh
 mysql -u root -p
 ```
-
-### export the database
-```sh
-mysqldump -u root -p docker_mysql_database > ./databases/docker_mysql_database.sql
-```
-
-### import a database
-```sh
-mysql -u root -p database_name < ./databases/database_name.sql
-```
-
 
 ## mysql connection settings
 These setttings can be used in your project settings or database management application (sequel pro)

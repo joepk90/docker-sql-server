@@ -7,7 +7,8 @@ services:
       container_name: docker_mysql_server
       working_dir: /databases
       volumes:
-        - .:/databases
+        - ./databases:/databases
+        - docker_mysql_server:/var/lib/mysql
       environment:
         - MYSQL_DATABASE=docker_mysql_database
         - MYSQL_ROOT_PASSWORD=docker_root
