@@ -43,7 +43,7 @@ mysql -u root -p database_name < ./databases/database_name.sql
 
 
 ## mysql connection settings
-These setttings can be used in your project settings or database database management applications (sequel pro)
+These setttings can be used in your project settings or database management application (sequel pro)
 | KEY | VALUE |
 | ------ | ------ |
 | HOST | 127.0.0.1 |
