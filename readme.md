@@ -6,6 +6,12 @@ if using this in a new project, be sure to update the following configuration se
 - volumes
 - MYSQL_DATABASE
 
+### mysql ui
+a mysql ui can be viewed at:
+```
+http://localhost:8306
+```
+
 ### start docker
 ```sh
 docker-compose up -d
