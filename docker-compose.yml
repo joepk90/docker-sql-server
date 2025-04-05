@@ -1,9 +1,9 @@
 version: "3.1"
-volumes:
-    docker_mysql_server:
+
 services:
     mysql:
-      image: mysql:5.6
+      # image: mysql:5.6
+      image: arm64v8/mysql:8.0
       container_name: docker_mysql_server
       working_dir: /databases
       volumes:
@@ -16,3 +16,21 @@ services:
         - MYSQL_PASSWORD=dbpw
       ports:
         - "8306:3306"
+  
+    adminer:
+      image: adminer:4.17.1   
+      container_name: docker_mysql_ui # mysql gui 
+      environment:
+        ADMINER_DEFAULT_SERVER: mysql
+        ADMINER_DEFAULT_USERNAME: root
+        ADMINER_DEFAULT_PASSWORD: docker_root
+        # ADMINER_DEFAULT_DB: docker_mysql_database 
+        
+      ports:
+      - "8090:8080"
+      depends_on:
+        - mysql
+
+volumes:
+    docker_mysql_server:
+      driver: local
